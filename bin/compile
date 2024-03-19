@@ -93,6 +93,7 @@ if [ "$GIGALIXIR_SHOULD_HOT_UPGRADE" = "true" ]; then
   echo "Elixir core releases does not support hot upgrades out of the box yet. Try distillery instead."
   exit 1
 else
+  mix sentry.package_source_code
   mix release $RELEASE_OPTIONS
 fi
 
